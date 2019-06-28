@@ -10,6 +10,244 @@ html(lang="en")
   body
     .wrapper
       .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+        section.promo#promo
+            .parallax
+              +image('content/budism.png', 'parallaxsky')
+              +image('content/mountain1.png', 'mountainlittle')
+              +image('content/mountain.png', 'mountain')
+              +image('content/man.png', 'man')
+              +image('content/cloud1.png', 'cloud')
+              +image('content/cloud2.png', 'tuchka')
+              +image('content/baloon.png', 'baloon')
+            .container  
+              header.header
+                .logo ПЕ
+                nav.menu
+                  ul.menu__list
+                    li.menu__item
+                      a.menu__item-link(href="#") Главная
+                    li.menu__item
+                      a.menu__item-link(href="#") Обо мне
+                    li.menu__item
+                      a.menu__item-link(href="#") Навыки
+                    li.menu__item
+                      a.menu__item-link(href="#") Работы
+                    li.menu__item
+                      a.menu__item-link(href="#") Отзывы
+                    li.menu__item
+                      a.menu__item-link(href="#") Связаться
+                .contacts
+                  ul.contacts__list
+                    li.contacts__item
+                      a.contacts__item-link
+                        +icon('instagram', 'contacts__item-icon')
+                    li.contacts__item
+                      a.contacts__item-link
+                        +icon('vkontakte', 'contacts__item-icon')
+                    li.contacts__item
+                      a.contacts__item-link
+                        +icon('github', 'contacts__item-icon')
+              .promo__content
+                .promo__content-info Личный сайт веб разработчика
+                .promo__content-name Евгений Поддубный
+              .promo__controls
+                a.promo__controls-link
+                  .promo__controls-name#scroll Скролл
+              .promo__about
+                .promo__about-info
+                  +image('content/foto.png', 'photo')
+                  .promo__about-block
+                    ul.promo__about-names-list
+                      li.promo__about-names-item Проживаю:
+                      li.promo__about-names-item Возраст:
+                      li.promo__about-names-item Родился:
+                    ul.promo__about-answer-list
+                      li.promo__about-answer-item Донецк
+                      li.promo__about-answer-item 24 года
+                      li.promo__about-answer-item 20 января 1995
+                .promo__about-description
+                  .promo__about-description-title Привет, меня зовут
+                  .promo__about-description-name  Евгений Поддубный
+                  .promo__about-description-me Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  .promo__about-description-ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        section.myskills#myskills
+          .container
+            .myskills__content
+              +image('content/bag.png', 'bag')
+              .myskills__info-block
+                h3.title-three Чем я могу быть полезен вам
+                .myskills__info-block-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .myskills__block
+                  h5.title-five Front-end
+                  ul.myskills__block-list
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -25s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name HTML5
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -13s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name CSS3
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -75s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name Javascript
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -25s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name Jquery и Vue.js
+                  h5.title-five.title-five-workflow Workflow
+                  ul.myskills__block-list
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -14s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name GIT
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -25s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name Terminal
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -50s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name Gulp
+                    li.myskills__block-item
+                      svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style="animation-delay: -33s")
+                      .myskills__block-item-style
+                        .myskills__block-item-name Webpack
+        section.myworks#myworks
+          .container
+            .myworks__content
+              .myworks__images-block
+                h4.title-four Мои работы
+                .myworks__preview-block
+                  .myworks__preview-max
+                    +image('content/1.jpg', 'active-img')
+                  ul.myworks__preview-list
+                    li.myworks__preview-item
+                      +image('content/2.jpg', 'myworks__preview-img')
+                    li.myworks__preview-item
+                      +image('content/3.jpg', 'myworks__preview-img')
+                    li.myworks__preview-item
+                      +image('content/4.jpg', 'myworks__preview-img')
+                    li.myworks__preview-item.active
+                      +image('content/5.jpg', 'myworks__preview-img')
+                  .myworks__controls
+                    button.myworks__controls-next(href="#")
+                    button.myworks__controls-prev(href="#")
+              .myworks__desc
+                ul.myworks__desc-list
+                  li.myworks__desc-item HTML
+                  li.myworks__desc-item
+                    .myworks__desc-style CSS
+                  li.myworks__desc-item
+                    .myworks__desc-style Javascript
+                h3.myworks__desc-title Сайт школы образования
+                .myworks__desc-text  Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.myworks__desc-link(href="#") Посмотреть сайт
+        section.connection#connection
+          .connection__parallax
+            +image('content/budism.png', 'background-budda')
+            +image('content/buddamounatin.png', 'connection__parallax-mountain')
+            +image('content/budda.png', 'connection__parallax-budda')
+            +image('content/buddacloud3.png', 'budda-cloud')
+            +image('content/buddacloud2.png', 'oblako')
+            +image('content/buddacloud.png', 'oblachko')
+          .connection__content
+            .container
+              .reviews
+                .reviews__block
+                  h2.title-two Что обо мне говорят
+                  .reviews__controls
+                    button.reviews__controls-button-prev
+                    button.reviews__controls-button-next
+                .reviews__comment
+                  ul.reviews__comment-list
+                    li.reviews__comment-item
+                      .reviews__comment-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      .reviews__comment-sender
+                        .reviews__comment-avatar(style=`background-image: url('${require('images/content/ava1.jpg')}')`)
+                        .reviews__comment-sender-info
+                          .reviews__comment-sender-name Ковальчук Дмитрий
+                          .reviews__comment-sender-position Основатель Loftschool
+                    li.reviews__comment-item
+                      .reviews__comment-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                      .reviews__comment-sender
+                        .reviews__comment-avatar(style=`background-image: url('${require('images/content/ava2.jpg')}')`)
+                        .reviews__comment-sender-info
+                          .reviews__comment-sender-name Владимир Сабанцев
+                          .reviews__comment-sender-position Преподаватель
+                form.form(action="post")#form
+                  h2.title-two.form__title Связаться со мной
+                  .form__row
+                    label.form__label
+                      .form__label-name Введите ваше имя
+                      input.form__input(type="text" placeholder="Поддубный Евгений" required)#form-input
+                      span.form__input-name-style
+                    label.form__label
+                      .form__label-name Введите ваш email
+                      input.form__input(type="text" placeholder="loftscholl@study.com" required)#form-input
+                      span.form__input-email-style
+                  label.form__label-comment
+                      .form__label-name Сообщение к письму
+                      textarea.form__textarea(type="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют строки и цена вопроса." required)#form-textarea
+                      span.form__input-text-style
+                  input(type="submit")#form__button
+        footer.footer
+          .footer__content
+            .footer__infoblock
+              .footer__date © 2019
+              .footer__infoblock-developer
+                h5.footer__title-five Поддубный Евгений
+                h6.footer__infoblock-title-six Личный сайт веб-разработчика
+            .footer__media
+              nav.footer__nav
+                ul.footer__list
+                  li.footer__item
+                    a.footer__item-link(href="#") Главная
+                  li.footer__item
+                    a.footer__item-link(href="#") Обо мне
+                  li.footer__item
+                    a.footer__item-link(href="#") Навыки
+                  li.footer__item
+                    a.footer__item-link(href="#") Работы
+                  li.footer__item
+                    a.footer__item-link(href="#") Отзывы
+                  li.footer__item
+                    a.footer__item-link(href="#") Связаться
+              .footer__block
+                .footer__social
+                  .footer__social-desc Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                  ul.footer__social-list
+                    li.footer__social-item
+                      a.footer__social-link
+                        +icon('instagram', 'footer__social-icon')
+                    li.footer__social-item
+                      a.footer__social-link
+                        +icon('vkontakte', 'footer__social-icon')
+                    li.footer__social-item
+                      a.footer__social-link
+                        +icon('github', 'footer__social-icon')
+                .footer__ps
+                  .footer__ps-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .footer__ps-author Martin Golding
+
+
+
+
+

@@ -1,0 +1,215 @@
+.connection {
+  background: transparent;
+  width: 100%;
+  min-height: 1450px;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    z-index: 5;
+    left: 0; 
+    right: 0;
+    padding-bottom: 32%;
+    background: white;
+    clip-path: polygon(50% 0%, 100% 0, 50% 14%, 0 0);
+  }
+}
+
+.connection__triangle {
+    width: 0;
+	height: 0;
+	border-left: 960px solid transparent;
+	border-right: 960px solid transparent;
+	border-top: 86px solid white;
+    position: absolute;
+    top: -3px;
+    left: -65px;
+    z-index: 1;
+}
+.background-budda {
+    position: absolute;
+    width: 100%;
+	height: 100%;
+    will-change: transform;
+    left: 0;
+    max-width: 139%;
+    top: -189px;
+    z-index: -100;
+    object-fit: cover;
+}
+.connection__parallax-mountain {
+    width: 100%;
+	height: 152%;
+    bottom: -1070px;
+    left: -286px;
+    max-width: 157%;
+    will-change: transform;
+    position: absolute;
+    z-index: -50;
+    object-fit: cover;
+}
+.connection__parallax-budda {
+    position: absolute;
+    right: 176px;
+    bottom: 385px;
+    z-index: -30;
+    object-fit: cover;
+    width: 26%;
+}
+.budda-cloud {
+    position: absolute;
+    max-width: 158%;
+    bottom: -735px;
+    left: 194px;
+    z-index: -10;
+    object-fit: cover;
+}
+.oblako {
+    width: 155%;
+    height: 125%;
+    will-change: transform;
+    position: absolute;
+    right: -328px;
+    top: 709px;
+    transform: rotate(-27deg);
+    z-index: -10;
+    max-width: 179%;
+    object-fit: cover;
+}
+.oblachko {
+    width: 166%;
+    height: 128%;
+    position: absolute;
+    bottom: -1090px;
+    right: 0;
+    max-width: 187%;
+    z-index: -11;
+    object-fit: cover;
+}
+.connection__content {
+    margin-top: 245px;
+    z-index: 1000;
+}
+.title-two {
+    color: #414c63;
+    font-family: "open_sansbold";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}
+.reviews__block {
+    display: flex;
+
+}
+.reviews__controls {
+    margin-left: 95px
+}
+.reviews__controls-button-prev {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #2d3c4e;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    background-color: transparent;
+    margin-right: 32px;
+}
+.reviews__controls-button-prev:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 14px;
+    top: 18px;
+    background: svg-load('short-arrow.svg', fill=#414c63, width=40%, height=40%) no-repeat;
+    background-size: 12px;
+    transform: scale(-1, 1);
+}
+.reviews__controls-button-next {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #2d3c4e;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    background-color: transparent;
+}
+.reviews__controls-button-next:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 18px;
+    top: 18px;
+    background: svg-load('short-arrow.svg', fill=#414c63, width=40%, height=40%) no-repeat;
+    background-size: 12px;
+}
+.reviews__comment-list {
+    display: flex;
+}
+.reviews__comment-item {
+    width: 456px;
+    height: 363px;
+    margin-top: 88px;
+    margin-right: 45px;
+}
+.reviews__comment-item:last-child {
+    margin-right: 0px;
+}
+.reviews__comment-text {
+    opacity: 0.5;
+    color: #414c63;
+    font-family: "open_sanssemibold";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    width: 330px;
+    min-height: 120px;
+    position: relative;
+    margin-left: 128px;
+}
+.reviews__comment-text:before {
+    content: '';
+    position: absolute;
+    left: -104px;
+    top: 10px;
+    background: svg-load('quote.svg', fill=#414c63, width=100%, height=100%) no-repeat;
+    width: 79px;
+    height: 66px;
+    opacity: 0.5;
+}
+.reviews__comment-sender {
+    display: flex;
+    margin-left: 126px;
+    margin-top: 25px;
+}
+.reviews__comment-sender-info {
+    margin-left: 30px;
+}
+.reviews__comment-avatar {
+    background-position: 32% 10%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.reviews__comment-sender-name {
+    color: #414c63;
+    font-family: "open_sansbold";
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 8px;
+    margin-bottom: 13px;
+}
+.reviews__comment-sender-position {
+    opacity: 0.3;
+    color: #414c63;
+    font-family: "open_sanssemibold";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
