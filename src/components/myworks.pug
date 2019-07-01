@@ -1,0 +1,39 @@
+- var project = [
+-    {
+-       img: 'content/1.jpg', 
+-       class: 'active-img',
+-       skills: ['HTML', 'CSS', 'Javascript'],
+-       name: 'Сайт школы образования',
+-       description: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+-       links: {
+-            linksText: 'Посмотреть сайт', 
+-            linksUrl: 'okokok.ru'
+-                }
+-    }
+-]
+
+
+
+.myworks__content
+    .myworks__images-block
+        h4.title-four Мои работы
+        .myworks__preview-block
+            .myworks__preview-max
+                +image(`content/1.jpg`, `active-img`)
+            ul.myworks__preview-list
+                - var items =  [{name:'content/2.jpg', href: '#'}, {name:'content/3.jpg', href: '#'}, {name:'content/4.jpg', href: '#'}, {name:'content/5.jpg', href: '#'}]
+                each item in items
+                    li.myworks__preview-item
+                        +image(`${item.name}`, 'myworks__preview-img')
+            .myworks__controls
+                button.myworks__controls-next(href="#")
+                button.myworks__controls-prev(href="#")
+    .myworks__desc
+        ul.myworks__desc-list
+            - var items = [{name: 'HTML'}, {name: 'CSS3'}, {name: 'Javascript'}]
+            each item in items
+                li.myworks__desc-item 
+                    .myworks__desc-style #{item.name}
+        h3.myworks__desc-title Сайт школы образования
+        .myworks__desc-text  Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        a.myworks__desc-link(href="#") Посмотреть сайт

@@ -1,17 +1,15 @@
 .myworks {
     position: relative;
+    padding-top: 138px;
+    padding-bottom: 119px;
 }
 .myworks__content {
     display: flex;
-    margin-bottom: 119px;
-
 }
 .title-four {
-    color: #414c63;
-    font-family: "open_sansbold";
+    color: $text-color;
     font-size: 36px;
     font-weight: 700;
-    margin-top: 137px;
 }
 .myworks__preview-block {
     position: relative;
@@ -51,24 +49,23 @@
 .myworks__controls-next {
     width: 50px;
     height: 50px;
-    background: svg-load('short-arrow.svg', fill=black, width=100%, height=100%) no-repeat;
-    background-size: 15px;
+    background: svg-load('short-arrow.svg', fill=$default-color, width=100%, height=100%) no-repeat;
+    background-size: 12px;
     transform: rotate(90deg);
     background-position: center center;
-    background-color: #2d3c4e;
-
+    background-color: $button-color;
 }
 .myworks__controls-prev {
     width: 50px;
     height: 50px;
-    background: svg-load('short-arrow.svg', fill=black, width=100%, height=100%) no-repeat;
-    background-size: 15px;
+    background: svg-load('short-arrow.svg', fill=$default-color, width=100%, height=100%) no-repeat;
+    background-size: 12px;
     transform: rotate(-90deg);
     background-position: center center;
-    background-color: #2d3c4e;
+    background-color: $button-color;
 }
 .myworks__desc {
-    margin-top: 277px;
+    margin-top: 141px;
     margin-left: 157px;
 }
 .myworks__desc-list {
@@ -81,17 +78,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #414c63;
+    color: $text-color;
     opacity: 0.7;
-    font-family: "open_sansregular";
     font-size: 15px;
     font-weight: 400;
     margin-right: 11px;
 }
 .myworks__desc-title {
-    color: #414c63;
-    color: #414c63;
-    font-family: "open_sansbold";
+    color: $text-color;
     font-size: 30px;
     font-weight: 700;
     line-height: 48px;
@@ -99,8 +93,7 @@
 }
 .myworks__desc-text {
     opacity: 0.7;
-    color: #414c63;
-    font-family: "open_sanssemibold";
+    color: $text-color;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -108,8 +101,7 @@
     width: 335px;
 }
 .myworks__desc-link {
-    color: #4b6fd7;
-    font-family: "open_sansbold";
+    color: $links-color;
     font-size: 18px;
     font-weight: 700;
     line-height: 48px;
@@ -123,7 +115,7 @@
     position: absolute;
     top: 17px;
     left: -32px;
-    background: svg-load('link.svg', fill=#4b6fd7, width=100%, height=100%);
+    background: svg-load('link.svg', fill=$links-color, width=100%, height=100%);
     background-repeat: no-repeat;
     background-size: cover;
     width: 15px;

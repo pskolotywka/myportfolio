@@ -2,7 +2,9 @@
   background: transparent;
   width: 100%;
   position: relative;
-  &:after {
+  padding-bottom: 7%;
+}
+promo:after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -11,10 +13,7 @@
     padding-bottom: 7%;
     background: white;
     clip-path: polygon(50% 100%, 100% 0, 100% 60%, 100% 100%, 0 100%, 0% 60%, 0 0);
-  }
 }
-
-
 .promo {
     position: relative;
     min-height: 1778px;
@@ -104,14 +103,15 @@
 .header {
     display: flex;
     width: 100%;
-    margin-top: 60px;
+    align-items: center;
+    height: 143px;
     justify-content: space-between;
 }
 .logo {
-    color: #414c63;
-    font-family: "open_sansextrabold", sans-serif;
+    color: $text-color;
+    font-style: bold;
     font-size: 36px;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 30px;
 }
 .menu {
@@ -130,8 +130,8 @@
    bottom: 0;
    left: 0;
    height: 2px;
-   background-color: #414c63;
-   border-radius: 30%;
+   background-color: $text-color;
+   border-radius: 15%;
    width: 0;
    transition: .4s;
 }
@@ -144,11 +144,16 @@
 .menu__item-link {
     list-style-type: none;
     text-decoration: none;
-    color: #414c63;
-    font-family: "Open Sans";
+    color: $text-color;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
+}
+.menu__list.active-menu {
+    margin-bottom: 59px;
+}
+.menu__list.active-menu .menu__item-link {
+    color: $default-color;
 }
 .contacts__list {
     display: flex;
@@ -161,13 +166,8 @@
 }
 .contacts__item-icon {
     width: 28px;
-    fill: #414c63;
+    fill: $text-color;
     transition: .4s;
-}
-.contacts__item-icon:hover {
-    fill: #414c63;
-    transform: scale(1.1);
-    animation: pulse .4s infinite;
 }
 @keyframes pulse {
   from {
@@ -185,29 +185,31 @@
     transform: scale3d(1.1, 1.1, 1.1);
   }
 }
-
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 252px;
+}
 .promo__content {
     margin: auto;
-    margin-top: 299px;
 }
 .promo__content-info {
     width: 178px;
     text-align: center;
     opacity: 0.4;
-    color: #414c63;
-    font-family: "open_sanssemibold";
+    color: $text-color;
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-        margin: auto;
+    margin: auto;
 }
 .promo__content-name {
     width: 461px;
     text-align: center;
-    color: #414c63;
-    font-family: "open_sansextrabold";
+    color: $text-color;
     font-size: 72px;
-    font-weight: 400;
+    font-weight: 800;
     line-height: 60px;
     margin-top: 23px;
 }
@@ -222,8 +224,7 @@
     cursor: pointer;
 }
 .promo__controls-name {
-    color: #414c63;
-    font-family: "open_sanssemibold";
+    color: $text-color;
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
@@ -234,21 +235,19 @@
     position: absolute;
     top: 0;
     right: -47px;
-    background: svg-load('scroll.svg', fill=#414c63, width=100%, height=100%);
+    background: svg-load('scroll.svg', fill=$text-color, width=100%, height=100%);
     background-repeat: no-repeat;
     background-size: cover;
     width: 30px;
     height: 30px;
     transition: 1s;
     animation: pulse 1s infinite;
-
 }
-
 .promo__about {
-    margin: auto;
-    width: 1085px;
     display: flex;
-    margin-top: 175px;
+    padding: 0 197px;
+    padding-top: 177px;
+    width: 100%;
 }
 .promo__about-info {
     width: 40%;
@@ -263,18 +262,16 @@
 }
 .promo__about-names-item {
     opacity: 0.3;
-    color: #414c63;
-    font-family: "open_sanssemibold";
+    color: $text-color;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 11px;
 }
 .promo__about-answer-item {
-    color: #414c63;
-    font-family: "open_sanssemibold";
+    color: $text-color;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 30px;
     margin-bottom: 11px;
 }
@@ -289,22 +286,19 @@
 }
 .promo__about-description-title {
     opacity: 0.5;
-    color: #414c63;
-    font-family: "open_sanssemibold";
+    color: $text-color;
     font-size: 16px;
     font-weight: 400;
 }
 .promo__about-description-name {
-    color: #414c63;
-    font-family: "open_sansbold";
+    color: $text-color;
     font-size: 36px;
     font-weight: 700;
     margin-top: 13px;
 }
 .promo__about-description-me {
-    color: #414c63;
+    color: $text-color;
     opacity: 0.5;
-    font-family: "open_sanssemibold";
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -313,8 +307,7 @@
 }
 .promo__about-description-ps {
     opacity: 0.5;
-    color: #414c63;
-    font-family: "open_sansregular";
+    color: $text-color;
     font-size: 16px;
     font-style: italic;
     line-height: 30px;
@@ -325,7 +318,7 @@
 	border-left: 40px solid transparent;
     border-bottom: 440px solid transparent;
     border-right: 400px solid transparent;
-    border-color: transparent transparent transparent #ffffff;
+    border-color: transparent transparent transparent $default-color;
     border-style: solid;
     border-width: 120px 0 0 900px;
     position: absolute;
@@ -333,13 +326,12 @@
     z-index: 1;
     left: 0px;
 }
-
 .triangle:after {
     content: "";
     border-left: 40px solid transparent;
     border-bottom: 440px solid transparent;
     border-right: 400px solid transparent;
-    border-color: transparent transparent transparent #ffffff;
+    border-color: transparent transparent transparent $default-color;
     border-style: solid;
     border-width: 120px 0 0 900px;
     transform: scale(-1, 1);
@@ -348,8 +340,6 @@
     z-index: 1;
     right: -912px;
 }
-
-
 @keyframes pulse {
   from {
     -webkit-transform: scale3d(1, 1, 1);
@@ -366,4 +356,3 @@
     transform: scale3d(1, 1, 1);
   }
 }
-

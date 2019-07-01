@@ -1,0 +1,7 @@
+.contacts
+    ul.contacts__list
+        - var items = [{name:'instagram', href: '#'}, {name:'vkontakte', href: '#'}, {name:'github', href: '#'}]
+        each item in items
+            li.contacts__item
+                a.contacts__item-link(href=item.href)
+                    +icon(`${item.name}`, 'contacts__item-icon')

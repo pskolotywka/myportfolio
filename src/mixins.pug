@@ -5,3 +5,20 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`) class=className)
+
+mixin socials(mod)
+  .contacts
+    ul.contacts__list(class=mod)
+        - var items = [{name:'instagram', href: '#'}, {name:'vkontakte', href: '#'}, {name:'github', href: '#'}]
+        each item in items
+            li.contacts__item
+                a.contacts__item-link(href=item.href)
+                    +icon(`${item.name}`, 'contacts__item-icon')
+
+mixin main-menu(mod)
+  nav.menu
+    ul.menu__list(class=mod)
+      - var itemsMenu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться',]
+      each item in itemsMenu
+        li.menu__item
+          a.menu__item-link(href="#")= item

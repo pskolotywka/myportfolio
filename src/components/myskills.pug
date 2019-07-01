@@ -1,0 +1,24 @@
+.myskills__info-block
+    h3.title-three Чем я могу быть полезен вам
+    .myskills__info-block-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    .myskills__block
+        h5.title-five Front-end
+        ul.myskills__block-list
+            - var itemsFront = [['-25s', 'HTML5'], ['-13s', 'CSS3'], ['-75s', 'Javascript'], ['-25s', 'Jquery и Vue.js']]
+            each item in itemsFront
+                li.myskills__block-item
+                    svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                        circle.circle.circle-under(cx='50' cy='50' r='40')
+                        circle.circle.circle-above(cx='50' cy='50' r='40' style=`animation-delay: ${item[0]}`)
+                    .myskills__block-item-style
+                        .myskills__block-item-name #{item[1]}
+        h5.title-five.title-five-workflow Workflow
+        ul.myskills__block-list
+                - var itemsWork = [['-14s', 'GIT'], ['-25s', 'Terminal'], ['-50s', 'GULP'], ['-33s', 'Webpack']]
+                each item in itemsWork
+                    li.myskills__block-item
+                        svg.percentage(class="circle" viewBox="0 0 100 100" preserverAspectRaio="none")
+                            circle.circle.circle-under(cx='50' cy='50' r='40')
+                            circle.circle.circle-above(cx='50' cy='50' r='40' style=`animation-delay: ${item[0]}`)
+                        .myskills__block-item-style
+                            .myskills__block-item-name #{item[1]}

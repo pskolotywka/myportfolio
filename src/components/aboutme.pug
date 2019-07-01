@@ -1,0 +1,17 @@
+.promo__about
+    .promo__about-info
+        +image('content/foto.png', 'photo')
+        .promo__about-block
+            ul.promo__about-names-list
+                - var items = [['Проживаю:', 'Донецк'], ['Возраст:', '24 года'], ['Родился:', '20 января 1995']]
+                each item in items
+                    li.promo__about-names-item #{item[0]}
+            ul.promo__about-answer-list
+                - var items = [['Проживаю:', 'Донецк'], ['Возраст:', '24 года'], ['Родился:', '20 января 1995']]
+                each item in items
+                    li.promo__about-answer-item #{item[1]}
+    .promo__about-description
+        .promo__about-description-title Привет, меня зовут
+        .promo__about-description-name  Евгений Поддубный
+        .promo__about-description-me Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+        .promo__about-description-ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
