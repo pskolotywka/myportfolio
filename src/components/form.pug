@@ -1,0 +1,16 @@
+form.form(action="post")#form
+    h2.title-two.form__title Связаться со мной
+    .form__row
+        label.form__label
+            .form__label-name Введите ваше имя
+            input.form__input(type="text" placeholder="Поддубный Евгений" required)#form-input
+            span.form__input-name-style
+        label.form__label
+            .form__label-name Введите ваш email
+            input.form__input(type="text" placeholder="loftscholl@study.com" required)#form-input
+            span.form__input-email-style
+    label.form__label-comment
+        .form__label-name Сообщение к письму
+        textarea.form__textarea(type="text" placeholder="Требуется ваша помощь в создании сайта. Интересуют строки и цена вопроса." required)#form-textarea
+        span.form__input-text-style
+    input(type="submit")#form__button
