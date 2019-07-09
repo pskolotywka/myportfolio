@@ -4,8 +4,10 @@
   "default-color": "#fff",
   "footer-color": "#1f232d",
   "button-color": "#2d3c4e",
+  "button-hover-color": "#5502f2",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",
+  "bp-desktable": "900px",
   "bp-tablets": "768px",
-  "bp-phones": "480px"
+  "bp-phones": "320px"
 }

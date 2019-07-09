@@ -1,5 +1,32 @@
 .form {
     padding-top: 138px;
+    @include desktop() {
+        padding-top: 186px;
+        padding-bottom: 180px;
+    @include tablets() {
+        padding-top: 52px;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        padding-bottom: 95px;
+    @include phones() {
+        padding-top: 0px;
+        padding-bottom: 90px;
+    }
+    }
+    }
+}
+.form__title {
+    color: $text-color;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 48px;
+    @include tablets() {
+        text-align: center;
+    @include phones() {
+        margin-top: 22px;
+    }
+    }
 }
 .form__label-name {
     opacity: 0.3;
@@ -7,16 +34,41 @@
     font-size: 16px;
     font-weight: 400;
     margin-left: 47px;
+    @include phones() {
+        text-align: center;
+        margin-left: 0px;
+    }
 }
 .form__row {
     margin-top: 82px;
     display: flex;
+    @include desktop() {
+        margin-top: 90px;
+    @include tablets() {
+        margin-top: 53px;
+        width: 100%;
+    @include phones() {
+        flex-direction: column;
+    }
+    }
+    }
 }
 .form__label {
     margin-right: 35px;
     position: relative;
     min-height: 88px;
     margin-bottom: 39px;
+    @include desktop() {
+        margin-right: 0px;
+    @include tablets() {
+        margin-right: 23px;
+        width: 50%;
+    @include phones() {
+        width: 100%;
+        margin-right: 0px;
+    }
+    }
+    }
 }
 .form__input {
     border: none;
@@ -29,6 +81,15 @@
     padding: 0 0 0 30px;
     margin-top: 9px;
     margin-left: 16px;
+    @include tablets() {
+        width: 96%;
+    @include phones() {
+        margin-left: 0px;
+        padding-left: 0px;
+        text-align: center;
+        width: 100%;
+    }
+    }
 }
 input[placeholder]          {
     color: $text-color;
@@ -63,6 +124,9 @@ input:-ms-input-placeholder {
     height: 30px;
     background-color: transparent;
     opacity: 0.6;
+    @include tablets() {
+        background: svg-load('user.svg', fill=transparent,width=100%, height=100%) no-repeat;
+    }
 }
 .form__input-name-style:after {
     content: '';
@@ -73,6 +137,13 @@ input:-ms-input-placeholder {
     height: 1px;
     border-radius: 15%;
     background-color: black;
+    @include desktabl() {
+        width: 343px;
+        left: 0px;
+    @include phones() {
+        width: 270px;
+    }
+    }
 }
 .form__input-email-style {
     position: absolute;
@@ -83,6 +154,9 @@ input:-ms-input-placeholder {
     height: 30px;
     background-color: transparent;
     opacity: 0.6;
+    @include tablets() {
+        background: svg-load('envelope.svg', fill=transparent, width=100%, height=100%) no-repeat;
+    }
 }
 .form__input-email-style:after {
     content: '';
@@ -93,6 +167,13 @@ input:-ms-input-placeholder {
     height: 1px;
     border-radius: 15%;
     background-color: black;
+    @include desktabl() {
+        width: 343px;
+        left: 0px;
+    @include phones() {
+        width: 270px;
+    }
+    }
 }
 .form__label-comment {
     width: 700px;
@@ -100,6 +181,12 @@ input:-ms-input-placeholder {
     display: flex;
     flex-direction: column;
     position: relative;
+    @include tablets() {
+        width: 100%;
+    @include phones() {
+        margin-top: 14px;
+    }
+    }
 }
 .form__label-comment-name {
     opacity: 0.3;
@@ -119,30 +206,61 @@ input:-ms-input-placeholder {
     min-height: 130px;
     width: 424px;
     margin-top: 10px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    @include tablets() {
+        min-height: 74px;
+    @include phones() {
+        margin-left: 0px;
+        width: 100%;
+        height: 100%;
+        padding-left: 30px;
+        font-size: 14px;
+        line-height: 25px;
+        margin-top: 19px;
+    }
+    }
 }
+
 textarea[placeholder]          {
     color: $text-color;
     font-size: 18px;
     font-weight: 700;
     line-height: 40px;
+    width: 400px;
+    @include phones() {
+        width: 100%;
+    }
     }
 textarea::-moz-placeholder     {
     color: $text-color;
     font-size: 18px;
     font-weight: 700;
     line-height: 40px;
+    width: 400px;
+    @include phones() {
+        width: 100%;
+    }
     } 
 textarea:-moz-placeholder      {
     color: $text-color;
     font-size: 18px;
     font-weight: 700;
     line-height: 40px;
+    width: 400px;
+    @include phones() {
+        width: 100%;
+    }
     } 
 textarea:-ms-input-placeholder {
     color: $text-color;
     font-size: 18px;
     font-weight: 700;
     line-height: 40px;
+    width: 400px;
+    @include phones() {
+        width: 100%;
+    }
 }
 .form__input-text-style {
     position: absolute;
@@ -152,7 +270,15 @@ textarea:-ms-input-placeholder {
     width: 30px;
     height: 30px;
     opacity: 0.3;
+    position: relaitve;
+    @include desktop() {
+        top: 44px;
+    @include phones() {
+        opacity: 0;
+    }
+    }
 }
+
 #form__button {
     width: 347px;
     height: 80px;
@@ -167,6 +293,21 @@ textarea:-ms-input-placeholder {
     margin-top: 30px;
     transition: .4s;
     cursor: pointer;
+    @include desktop() {
+        margin-top: 40px;
+        width: 369px;
+        height: 88px;
+    @include tablets() {
+        width: 350px;
+        margin-top: 0px;
+        margin-bottom: 37px;
+    @include phones() {
+        width: 96%;
+        height: 63px;
+        margin-top: 28px;
+    }
+    }
+    }
 }
 #form__button:hover {
     -webkit-box-shadow: 4px 10px 94px -19px rgba(0,0,0,0.37);

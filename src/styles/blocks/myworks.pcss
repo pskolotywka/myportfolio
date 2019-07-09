@@ -2,35 +2,110 @@
     position: relative;
     padding-top: 138px;
     padding-bottom: 119px;
+    @include desktop() {
+        padding-left: 26px;
+        padding-bottom: 7%;
+        padding-top: 157px;
+    @include tablets() {
+        padding: 0 21px;
+        padding-bottom: 7%;
+    @include phones() {
+        padding: 0;
+        padding-bottom: 29%;
+    }
+    }
+    }
+}
+.myworks .container {
+    @include phones() {
+        width: 100%;
+    }
 }
 .myworks__content {
     display: flex;
+    @include tablets() {
+        flex-direction: column;
+    }
 }
 .title-four {
     color: $text-color;
     font-size: 36px;
     font-weight: 700;
+    @include phones() {
+        font-size: 22px;
+        text-align: center;
+        font-size: 28px;
+        margin-top: 26px;
+    }
 }
 .myworks__preview-block {
     position: relative;
     width: 976px;
     height: 609px;
     margin-top: 91px;
-    overflow: hidden;
+    @include desktop() {
+        width: 667px;
+        height: 434px;
+        margin-top: 62px;
+    @include tablets() {
+        width: 716px;
+    @include phones() {
+        margin-top: 29px;
+        height: 218px;
+        width: 100%;
+    }
+    }
+    }
 }
 .myworks__preview-list {
     position: absolute;
-    bottom: 64px;
+    bottom: 63px;
     right: 0;
     -webkit-box-shadow: -36px 3px 64px 3px rgba(0,0,0,0.75);
     -moz-box-shadow: -36px 3px 64px 3px rgba(0,0,0,0.75);
     box-shadow: -36px 3px 64px 3px rgba(0,0,0,0.75);
+    @include desktop() {
+        height: 300px;
+        bottom: 58px;
+        overflow: hidden;
+    @include tablets() {
+        bottom: 37px;
+        height: 360px;
+    @include phones() {
+        display: none;
+    }
+    }
+    }
 }
 .myworks__preview-item {
     width: 178px;
-    height: 100px;
+    height: 110px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
+    @include desktop() {
+        width: 178px;
+        height: 100px;
+    @include tablets() {
+        width: 198px;
+        height: 120px;
+    }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(85,0,242,0.3);
+        opacity: 0;
+        transition: .4s;
+        border: 2px solid #f29400;
+    }
+}
+.myworks__preview-item:hover:after {
+    opacity: 1;
 }
 .active {
     border: 4px solid #f29400;
@@ -38,6 +113,16 @@
 .myworks__preview-max {
     height: 546px;
     overflow: hidden;
+    @include desktop() {
+        height: 377px;
+    @include tablets() {
+        height: 397px;
+    @include phones() {
+        height: 212px;
+        /* max-width: 51%; */
+    }
+    }
+    }
 }
 .myworks__preview-img {
     width: 100%;
@@ -45,6 +130,10 @@
 .myworks__controls {
     position: absolute;
     right: 0;
+    @include phones() {
+        bottom: 3px;
+
+    }
 }
 .myworks__controls-next {
     width: 50px;
@@ -54,6 +143,11 @@
     transform: rotate(90deg);
     background-position: center center;
     background-color: $button-color;
+    transition: .4s;
+    @include tablets() {
+        width: 55px;
+        height: 55px;
+    }
 }
 .myworks__controls-prev {
     width: 50px;
@@ -63,10 +157,46 @@
     transform: rotate(-90deg);
     background-position: center center;
     background-color: $button-color;
+    transition: .4s;
+    @include tablets() {
+        width: 55px;
+        height: 55px;
+    }
+}
+.myworks__controls-next:hover,
+.myworks__controls-prev:hover {
+    background-color: $button-hover-color;
+}
+.myworks__previews-number {
+    width: 223px;
+    height: 286px;
+    opacity: 0.05;
+    color: $text-color;
+    font-size: 400px;
+    font-weight: 700;
+    position: absolute;
+    top: -100px;
+    right: -133px;
+    z-index: -100;
 }
 .myworks__desc {
     margin-top: 141px;
     margin-left: 157px;
+    @include desktop() {
+        margin-left: 122px;
+        margin-top: 154px;
+        margin-top: 117px;
+    @include tablets() {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 68px;
+    @include phones() {
+        width: 85%;
+    }
+    }
+    }
 }
 .myworks__desc-list {
     display: flex;
@@ -83,6 +213,9 @@
     font-size: 15px;
     font-weight: 400;
     margin-right: 11px;
+    @include tablets() {
+        padding: 13px 27px;
+    }
 }
 .myworks__desc-title {
     color: $text-color;
@@ -90,6 +223,12 @@
     font-weight: 700;
     line-height: 48px;
     margin-top: 40px;
+    @include desktop() {
+    @include phones() {
+        margin-top: 14px;
+        line-height: normal;
+    }
+    }
 }
 .myworks__desc-text {
     opacity: 0.7;
@@ -99,21 +238,47 @@
     line-height: 30px;
     margin-top: 29px;
     width: 335px;
+    @include desktop() {
+        margin-top: 34px;
+    @include tablets() {
+        width: 64%;
+        text-align: center;
+        margin-top: 18px;
+    @include phones() {
+        width: 94%;
+        margin-top: 6px;
+        text-align: left;
+        line-height: 24px;
+    }
+    }
+    }
 }
 .myworks__desc-link {
     color: $links-color;
     font-size: 18px;
     font-weight: 700;
-    line-height: 48px;
     position: relative;
-    margin-top: 24px;
+    margin-top: 34px;
     margin-left: 35px;
     display: flex;
+    text-decoration: none;
+    @include tablets() {
+        margin-top: 16px;
+    @include phones() {
+        width: 100%;
+        text-align: left;
+        margin-left: 65px;
+        margin-top: 46px;
+    }
+    }
+}
+.myworks__desc-link:hover {
+    text-decoration: underline;
 }
 .myworks__desc-link:before {
     content: '';
     position: absolute;
-    top: 17px;
+    top: 5px;
     left: -32px;
     background: svg-load('link.svg', fill=$links-color, width=100%, height=100%);
     background-repeat: no-repeat;

@@ -1,16 +1,40 @@
 .footer {
     height: 407px;
     background-color: $footer-color;
+    @include tablets() {
+        min-height: 581px;
+    @include phones() {
+        min-height: 840px;
+    }
+    }
+    
 }
 .footer__content {
     display: flex;
     height: 100%;
+    @include phones() {
+        flex-direction: column;
+    }
 }
 .footer__infoblock {
     display: flex;
     width: 35%;
     padding-left: 161px;
     padding-top: 85px;
+    @include desktop() {
+        display: flex;
+        flex-direction: column;
+        padding-left: 59px;
+        padding-top: 67px;
+        width: 25%;
+    @include tablets() {
+        width: 34%;
+    @include phones() {
+        width: 100%;
+        padding-left: 31px;
+    }
+    }
+    }
 }
 .footer__date {
     opacity: 0.1;
@@ -22,6 +46,16 @@
     width: 34%;
     margin-top: 12px;
     margin-left: 58px;
+    @include desktop() {
+        margin-left: 0px;
+    @include tablets() {
+        width: 50%;
+    @include phones() {
+        width: 100%;
+        margin-top: 18px;
+    }
+    }
+    }
 }
 .footer__title-five {
     color: $default-color;
@@ -42,6 +76,17 @@
     padding-top: 89px;
     padding-left: 32px;
     width: 60%;
+    @include desktop() {
+        padding-top: 80px;
+    @include tablets() {
+        width: 73%;
+        padding-top: 57px;
+    @include phones() {
+        padding-top: 32px;
+        width: 85%;
+    }
+    }
+    }
 }
 .footer__nav {
     margin-bottom: 55px;
@@ -79,11 +124,25 @@
 }
 .footer__block {
     display: flex;
+    @include tablets() {
+        display: block;
+        margin-top: 16px;
+    @include phones() {
+        margin-top: 8px;
+    }
+    }
 }
 .footer__social {
     width: 34%;
     display: inline-block;
     margin-right: 148px;
+    @include desktop() {
+        width: 45%;
+        margin-right: 62px;
+    @include tablets() {
+        width: 100%;
+    }
+    }
 }
 .footer__social-desc {
     opacity: 0.3;
@@ -92,12 +151,27 @@
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 22px;
+    @include desktop() {
+        margin-bottom: 28px;
+    @include tablets() {
+        width: 70%;
+        margin-bottom: 10px;
+    @include phones() {
+        width: 100%
+    }
+    }
+    }
 }
 .footer__social-list {
     display: flex;
 }
 .footer__social-item {
     margin-right: 22px;
+}
+.contacts.active-mobile {
+    @include phones() {
+        display: block;
+    }
 }
 .contacts__item:hover {
     animation: pulse .4s infinite;
@@ -140,9 +214,19 @@
     fill: #ffffff;
     transition: .4s;
 }
+.contacts__list.footer-icons .contacts__item-link {
+    @include tablets() {
+        width: 60px;
+        height: 60px;
+    }
+}
 .footer__ps {
     width: 36%;
     display: inline-block;
+    @include tablets() {
+        width: 100%;
+        margin-top: 51px;
+    }
 }
 .footer__ps-text {
     opacity: 0.3;
@@ -151,6 +235,9 @@
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 20px;
+    @include phones() {
+        margin-bottom: 9px;
+    }
 }
 .footer__ps-author {
     color: $default-color;
@@ -175,3 +262,28 @@
     transform: scale3d(1, 1, 1);
   }
 }
+
+.menu.active-footer {
+    @include tablets() {
+        display: block;
+
+    }
+}
+.menu__list.active-menu {
+    @include tablets() {
+        flex-direction: row;
+        flex-flow: wrap;
+        width: 100%;
+        margin-bottom: 0px;
+        margin-right: 68px;
+    @include phones() {
+        width: 125%;
+    }
+    }
+}
+.menu__list.active-menu menu__item {
+    @include phones() {
+        margin-bottom: 35px;
+    }
+}
+

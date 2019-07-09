@@ -1,8 +1,16 @@
 .promo {
-  background: transparent;
-  width: 100%;
-  position: relative;
-  padding-bottom: 7%;
+    background: transparent;
+    width: 100%;
+    position: relative;
+    /* min-height: 1778px; */
+    overflow: hidden;
+    padding-bottom: 7%;
+    @include tablets() {
+        padding-bottom: 18%;
+    @include phones() {
+        padding-bottom: 35%;
+    }
+    }
 }
 .promo:after {
     content: '';
@@ -14,91 +22,53 @@
     background: white;
     clip-path: polygon(50% 100%, 100% 0, 100% 60%, 100% 100%, 0 100%, 0% 60%, 0 0);
 }
-.promo {
-    position: relative;
-    min-height: 1778px;
-    overflow: hidden;
-}
 .parallax {
     width: 100%;
     height: 100%;
-}
-.parallaxsky {
-    position: absolute;
-    background-size: cover;
-    background-position: center center;
     z-index: -100;
+}
+.parallaxmountain {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    will-change: transform;
     object-fit: cover;
 }
-.mountain {
-    position: absolute;
-    background-size: cover;
-    background-position: center;
+.parallaxmountain:first-child {
+    z-index: -100;
+}
+.parallaxmountain:nth-child(2) {
+    z-index: -50;
+    top: 300px;
+}
+.parallaxmountain:nth-child(3) {
     z-index: -80;
-    bottom: 200px;
-    width: 100%;
-    will-change: transform;
-    object-fit: cover;
+    top: 200px;
 }
-.mountainlittle {
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    z-index: -10;
-    bottom: 0;
-    width: 100%;
-    will-change: transform;
-    object-fit: cover;
+.parallaxmountain:nth-child(4) {
+    z-index: -30;
+    top: 970px;
+    width: 70%;
+    height: 70%;
+    left: -45px;
 }
-.tuchka {
-    position: absolute;
-    max-width: 190%;
-    left: -693px;
-    bottom: -466px;
-    background-size: cover;
-    background-position: center;
-    z-index: -10;
-    width: 189%;
-    will-change: transform;
-    object-fit: cover;
-}
-.man {
-    position: absolute;
-    max-width: 83%;
-    left: -305px;
-    bottom: 264px;
-    background-size: cover;
-    background-position: center;
-    z-index: -10;
-    right: 280px;
-    width: 100%;
-    will-change: transform;
-    object-fit: cover;
-
-}
-.cloud {
-    position: absolute;
-    bottom: 641px;
-    background-size: cover;
-    background-position: center;
-    z-index: -15;
-    width: 100%;
-    will-change: transform;
-    object-fit: cover;
-}
-.baloon {
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    width: 10%;
+.parallaxmountain:nth-child(5) {
+    top: 400px;
     z-index: -60;
-    top: 436px;
-    right: 377px;
 }
-
+.parallaxmountain:nth-child(6) {
+    top: 1500px;
+    z-index: -20;
+}
+.parallaxmountain:last-child {
+    top: 40%;
+    left: 60%;
+    z-index: -60;
+    right: 0;
+    width: 213px;
+    height: 277px;
+}
 
 .header {
     display: flex;
@@ -106,6 +76,17 @@
     align-items: center;
     height: 143px;
     justify-content: space-between;
+    @include desktop() {
+        justify-content: space-around;
+    @include desktabl() {
+        justify-content: space-between;
+    @include tablets() {
+        justify-content: space-between;
+        padding: 0px 23px;
+        padding-top: 33px;
+    }
+    }
+    }
 }
 .logo {
     color: $text-color;
@@ -116,13 +97,34 @@
 }
 .menu {
     margin-top: -4px;
+    @include desktabl() {
+        display: none;
+    @include tablets() {
+        display: none;
+    }
+    }
+    
 }
 .menu__list {
     display: flex;
+    @include desktabl() {
+        flex-direction: column;
+    }
 }
 .menu__item {
-   margin-right: 63px;
-   position: relative;
+    margin-right: 63px;
+    position: relative;
+    @include desktabl() {
+        margin-bottom: 32px;
+    @include tablets() {
+        margin-bottom: 32px;
+        margin-right: 78px;
+    @include phones() {
+        margin-bottom: 25px;
+    }
+    }
+    }
+   
 }
 .menu__item:after {
    content: '';
@@ -151,15 +153,32 @@
 }
 .menu__list.active-menu {
     margin-bottom: 59px;
+    @include tablets() {
+        margin-bottom: 0px;
+    }
 }
 .menu__list.active-menu .menu__item-link {
     color: $default-color;
+}
+.social-menu {
+    display: flex;
+}
+.contacts {
+    @include tablets() {
+        margin-right: 30px;
+    @include phones() {
+        display: none;
+    }
+    }
 }
 .contacts__list {
     display: flex;
 }
 .contacts__item {
     margin-right: 39px;
+    @include tablets() {
+        margin-bottom: 0px;
+    }
 }
 .contacts__item:last-child {
     margin-right: 0px;
@@ -168,6 +187,9 @@
     width: 28px;
     fill: $text-color;
     transition: .4s;
+}
+.contacts__item-icon:hover {
+    fill: $button-hover-color;
 }
 @keyframes pulse {
   from {
@@ -190,9 +212,23 @@
     flex-direction: column;
     justify-content: center;
     padding-top: 252px;
+    @include desktop() {
+        padding-top: 192px;
+    @include tablets() {
+    @include phones() {
+        padding-top: 87px;
+    }
+    }
+    }
 }
 .promo__content {
     margin: auto;
+    @include desktop() {
+        display: flex;
+    @include tablets() {
+        flex-direction: column;
+    }
+    }
 }
 .promo__content-info {
     width: 178px;
@@ -212,14 +248,21 @@
     font-weight: 800;
     line-height: 60px;
     margin-top: 23px;
+    @include phones() {
+        font-size: 36px;
+        width: 100%;
+        margin-top: 0px;
+    }
 }
 .promo__controls {
     margin: auto;
     margin-top: 334px;
+     @include phones() {
+        display: none;
+    }
 }
 .promo__controls-link {
     display: flex;
-    width: 120px;
     height: 28px;
     cursor: pointer;
 }
@@ -229,6 +272,7 @@
     font-weight: 400;
     line-height: 30px;
     position: relative;
+   
 }
 .promo__controls-name:after {
     content: "";
@@ -248,17 +292,46 @@
     padding: 0 197px;
     padding-top: 177px;
     width: 100%;
+    @include desktop() {
+        padding: 0;
+        padding-top: 367px;
+    @include tablets() {
+        padding-top: 153px;
+    @include phones() {
+        flex-direction: column;
+        padding-top: 322px;
+    }
+    }
+    }
 }
 .promo__about-info {
     width: 40%;
+    @include tablets() {
+        width: 35%;
+        margin-right: 14%;
+    @include phones() {
+        width: 100%;
+    }
+    }
 }
 .promo__about-block {
     display: flex;
     margin-top: 66px;
+    @include desktop() {
+        display: flex;
+        justify-content: space-around;
+    @include phones() {
+        margin-top: 22px;
+    }
+    }
 }
 .promo__about-names-list {
     margin-right: 77px;
     margin-left: 54px;
+    @include desktop() {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
 }
 .promo__about-names-item {
     opacity: 0.3;
@@ -283,6 +356,14 @@
 }
 .promo__about-description {
     padding-left: 55px;
+    @include tablets() {
+        width: 55%;
+        padding-left: 0px;
+    @include phones() {
+        width: 100%;
+        margin-top: 18px;
+    }
+    }
 }
 .promo__about-description-title {
     opacity: 0.5;
@@ -304,6 +385,10 @@
     line-height: 30px;
     width: 525px;
     margin-top: 29px;
+    @include phones() {
+        width: 100%;
+        margin-top: 32px;
+    }
 }
 .promo__about-description-ps {
     opacity: 0.5;
@@ -313,6 +398,10 @@
     line-height: 30px;
     width: 603px;
     margin-top: 90px;
+    @include phones() {
+        width: 100%;
+        margin-top: 54px;
+    }
 }
 .triangle {
 	border-left: 40px solid transparent;
@@ -355,4 +444,64 @@
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
+}
+.hamburger-menu {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    display: none;
+    @include desktabl() {
+        display: block;
+    }
+}
+.hamburger-menu__style {
+    width: 25px;
+    height: 4px;
+    border-radius: 25%;
+    background-color: $text-color;
+    margin-bottom: 8px;
+}
+.hamburger-menu__style:last-child {
+    margin-bottom: 0px;
+}
+
+.menu.mobile {
+    display: block;
+    
+}
+.mobile-menu {
+    width: 40%;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    display: none;
+    transition: .4s;
+    @include desktabl() {
+        display: block;
+    @include phones() {
+        width: 100%;
+    }
+    }
+}
+
+.mobile-menu__controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 70px 45px;
+}
+.mobile-menu__content {
+    padding-left: 60px;
+}
+.mobile-menu__controls-icon {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+}
+.mobile-menu__contacts {
+    padding: 60px 55px;
 }

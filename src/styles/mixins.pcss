@@ -9,6 +9,11 @@
     @content;
   }
 }
+@mixin desktabl() {
+  @media screen and (max-width: $bp-desktable) {
+    @content;
+  }
+}
 
 @mixin tablets() {
   @media screen and (max-width: $bp-tablets) {

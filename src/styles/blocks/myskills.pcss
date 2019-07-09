@@ -1,20 +1,62 @@
 .myskills {
-    padding-top: 142px
+    padding-top: 142px;
+    @include desktop() {
+        padding-top: 260px;
+    @include tablets() {
+        padding-top: 142px;
+    @include phones() {
+        padding-top: 99px;
+    }
+    }
+    }
 }
 .myskills__content {
     display: flex;
+    @include tablets() {
+        flex-direction: column-reverse;
+    }
 }
 .bag {
     margin-left: -44px;
     margin-top: 112px;
     margin-right: 82px;
     object-fit: contain;
+    @include desktop() {
+        margin-left: -181px;
+        margin-top: 72px;
+        margin-right: -39px;
+    @include tablets() {
+        width: 31%;
+        margin-top: 48px;
+        margin: 71px auto;
+    @include phones() {
+        margin-top: 21px;
+        width: 66%;
+    }
+    }
+    }
 }
 .title-three {
     color: $text-color;
     font-size: 30px;
     font-weight: 700;
     line-height: 36px;
+    @include tablets() {
+        width: 40%;
+        text-align: center;
+    @include phones() {
+        width: 100%;
+        text-align: left;
+    }
+    }
+}
+.myskills__info-block {
+    @include tablets() {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .myskills__info-block-text {
     opacity: 0.5;
@@ -24,26 +66,58 @@
     line-height: 30px;
     width: 585px;
     margin-top: 49px;
+    @include tablets() {
+        text-align: center;
+    @include phones() {
+        width: 91%;
+        text-align: left;
+        margin-top: 21px;
+    }
+    }
+    
 }
 .myskills__block {
     width: 100%;
     min-height: 500px;
     margin-top: 40px;
     padding-left: 118px;
+    @include tablets() {
+        padding-left: 0px;
+        margin-top: 19px;
+    @include phones() {
+        width: 109%;
+    }
+    }
 }
+
 .title-five {
     color: $text-color;
     font-size: 24px;
     font-weight: 700;
     margin-top: 83px;
+    @include tablets() {
+        text-align: center;
+        margin-top: 0px;
+    @include phones() {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 21px;
+    }
+    }
 }
 .title-five-workflow {
     margin-top: 30px;
+    @include tablets() {
+        text-align: center;
+    }
 }
 .myskills__block-list {
     margin-top: 29px;
     display: flex;
     flex-flow: wrap;
+    @include tablets() {
+        justify-content: center;
+    }
 }
 .percentage {
     display: inline-block;
@@ -56,10 +130,20 @@
     position: relative;
     margin-right: 40px;
     height: 100%;
+    @include tablets() {
+        margin-right: 12px;
+    @include phones() {
+        margin-right: 0px;
+        width: 50%;
+    }
+    }
 }
-.myskills__block-item:first-child {
+.myskills__block-item:last-child {
+    margin-right: 0px;
+}
+/* .myskills__block-item:first-child {
     margin-left: 0px;
-}
+} */
 .myskills__block-item-style {
     position: absolute;
     left: 0;
@@ -80,12 +164,12 @@
 }
 .circle {
     fill: transparent;
-    stroke-width: 5px;
+    stroke-width: 8px;
     stroke: #ccc;
 }
 .circle-above {
     stroke: #8900ef;
-    stroke-width: 10px;
+    stroke-width: 15px;
     stroke-dasharray: 251;
     stroke-dashoffset: 251;
     animation: fill 101s linear infinite;

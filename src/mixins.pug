@@ -3,11 +3,11 @@ mixin icon(name, className)
   svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
     use(xlink:href=icon.url)
 
-mixin image(path, className)
-  img(src=require(`images/${path}`) class=className)
+mixin image(path, className, dataValue)
+  img(src=require(`images/${path}`) class=className data-speed=dataValue)
 
-mixin socials(mod)
-  .contacts
+mixin socials(mod, modhead)
+  .contacts(class=modhead)
     ul.contacts__list(class=mod)
         - var items = [{name:'instagram', href: '#'}, {name:'vkontakte', href: '#'}, {name:'github', href: '#'}]
         each item in items
@@ -15,10 +15,11 @@ mixin socials(mod)
                 a.contacts__item-link(href=item.href)
                     +icon(`${item.name}`, 'contacts__item-icon')
 
-mixin main-menu(mod)
-  nav.menu
+mixin main-menu(mod, modhead)
+  nav.menu(class=modhead)
     ul.menu__list(class=mod)
       - var itemsMenu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться',]
       each item in itemsMenu
         li.menu__item
           a.menu__item-link(href="#")= item
+
