@@ -1,17 +1,17 @@
-.connection {
+.reviews {
     background: transparent;
     width: 100%;
-    /* min-height: 1450px; */
+    height: 1457px;
     overflow: hidden;
     position: relative;
     @include desktop() {
-        padding: 0 31px;
+        /* padding: 0 31px; */
     @include phones() {
         padding: 0px;
     }
     }
 }
-.connection:after {
+.reviews:after {
     content: '';
     position: absolute;
     top: -1px;
@@ -22,7 +22,7 @@
     background: white;
     clip-path: polygon(50% 0%, 102% 0, 50% 14%, 0 0);
 }
-.connection__triangle {
+.reviews__triangle {
     width: 0;
 	height: 0;
 	border-left: 960px solid transparent;
@@ -33,10 +33,11 @@
     left: -65px;
     z-index: 1;
 }
-.connection__parallax {
+.reviews__parallax {
     width: 100%;
     height: 100%;
     z-index: -100;
+    position: absolute;
 }
 .parallaxbudda {
     position: absolute;
@@ -77,7 +78,7 @@
    left: 0;
 }
 
-.connection__content {
+.reviews__content {
     margin-top: 245px;
     z-index: 1000;
     @include desktop() {

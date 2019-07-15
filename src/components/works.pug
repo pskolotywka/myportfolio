@@ -1,0 +1,50 @@
+script(type="text/x-template")#works
+    .myworks__images-block
+        display(
+            :works="works"
+            :currentWork='currentWork'
+            @slide="handleSlide"
+            :currentIndex="currentIndex"
+        )
+        info(
+            :currentWork="currentWork"
+        )
+
+script(type="text/x-template")#works-display
+    .myworks__preview-block
+        .myworks__preview-max
+            img(:src="currentWork.photo").active-img
+        .myworks__previews-number {{currentIndex + 1}}
+        btns(
+            @slide="direction => $emit('slide', direction)"
+        )
+        thumbs(
+            :works="reversedWorks"
+            :currentWork="currentWork"
+        )
+            
+            
+script(type="text/x-template")#works-thumbs
+    ul.myworks__preview-list
+        li.myworks__preview-item(v-for="work in works" :class="{active: work.id == currentWork.id}")
+            img(:src="work.photo" alt="").myworks__preview-img
+
+script(type="text/x-template")#works-btns
+    .myworks__controls
+        button.myworks__controls-next(href="#" @click.prevent="$emit('slide', 'prev')")
+        button.myworks__controls-prev(href="#" @click.prevent="$emit('slide', 'next')")
+        
+
+script(type="text/x-template")#works-info
+    .myworks__desc
+        tags(
+            :tags="tagsArray"
+        )
+        h3.myworks__desc-title {{currentWork.title}}
+        .myworks__desc-text  {{currentWork.desc}}
+        a.myworks__desc-link(href="#") {{currentWork.link}}
+
+script(type="text/x-template")#works-tags
+    ul.myworks__desc-list
+        li.myworks__desc-item(v-for="tag in tags")
+            .myworks__desc-style {{tag}}

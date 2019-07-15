@@ -168,17 +168,17 @@
     stroke: #ccc;
 }
 .circle-above {
-    stroke: #8900ef;
+    stroke: url(#gradient);
     stroke-width: 15px;
     stroke-dasharray: 251;
     stroke-dashoffset: 251;
-    animation: fill 101s linear infinite;
-    animation-play-state: paused;
+/*     animation: fill 101s linear infinite;
+    animation-play-state: paused; */
 }
-.circle-above[style="animation-delay: -100s"] {
+/* .circle-above[style="animation-delay: -100s"] {
     animation: initial;
     stroke-dashoffset: 0;
-}
+} */
 @keyframes fill {
     from {
         stroke-dashoffset: 252

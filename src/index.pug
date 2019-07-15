@@ -20,17 +20,22 @@ html(lang="ru")
           .container
             .myskills__content
               +image('content/bag.png', 'bag')
-              include components/myskills
+              .myskills__info-block
+                h3.title-three Чем я могу быть полезен вам
+                .myskills__info-block-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                .myskills__block
+                  #skills-container
         section.myworks#myworks
           .container
-            include components/myworks
-        section.connection#connection
+            .myworks__content
+              h4.title-four Мои работы
+              #slider-container
+        section.reviews
           include components/parallax-budda
-          .connection__content
+          .reviews__content
             .container
-              include components/reviews
+              #reviews-container
               include components/form
         footer.footer
           include components/footer
-  script(src="./src/scripts/menu-mobile.js")
-  script(src="./src/scripts/parallax.js")
+    include ./entry

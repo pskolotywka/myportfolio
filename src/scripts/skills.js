@@ -1,39 +1,54 @@
-/* console.log('this is skills module'); */
+import Vue from 'vue';
 
-
-const parallaxLayer = document.querySelectorAll('.parallaxmountain');
-
-function moveLayerScroll(mScroll) {
-    for (let i = 0; i < parallaxLayer.length; i++ ) {
-        const layerSpeed = parallaxLayer[i].dataset.speed;
-        const strafe = mScroll * layerSpeed / 12;
-        parallaxLayer[i].style.transform = `translateY(-${strafe}%)`;
+const skill = {
+    template: '#skills-item', 
+    props: {
+        skillName: String,
+        skillPercent: Number
+    },
+    methods: {
+        drawColoredCircle() {
+            const circle = this.$refs['circle'];
+            const dashArray = parseInt(
+                getComputedStyle(circle).getPropertyValue("stroke-dasharray")
+            );
+            const percent = (dashArray / 100) * (100 - this.skillPercent);
+            circle.style.strokeDashoffset = percent;
+        }
+    },
+    mounted() {
+        this.drawColoredCircle()
     }
 }
 
-window.addEventListener('scroll', e => {
-    const mScroll = window.pageYOffset;
-    moveLayerScroll(mScroll)
-    
+const row = {
+    template: '#skills-row',
+    components: {
+        skill
+    },
+    props: {
+        skill: Object
+    }
+}
+
+
+
+new Vue({
+    el: '#skills-container',
+    template: '#skills-list',
+    components: {
+        row
+    },
+    data() {
+        return {
+            skills: []
+        }
+    },
+    created() {
+        const data = require('../data/skills.json');
+        this.skills = data;
+    },
+    mounted() {
+        
+    }
 })
-
-function parallaxBudda(event) {
-    const layerBudda = document.querySelector('.budda');
-    layerBudda.style.transform = `translate(${event.clientX/10}px, ${event.clientY/10}px)`
-}
-
-document.addEventListener('mousemove', parallaxBudda);
-
-
-
-window.onload = () => {
-    const menuButtonOpen = document.querySelector('.hamburger-menu');
-    const menuButtonClose = document.querySelector('.mobile-menu__controls-icon');
-    const menuPosition = document.querySelector('.mobile-menu');
-    menuButtonOpen.addEventListener('click', () => {
-        menuPosition.style.right = '0%';
-    })
-    menuButtonClose.addEventListener('click', () => {
-        menuPosition.style.right = '-100%'
-    })
-}

@@ -1,4 +1,3 @@
-
 const parallaxLayer = document.querySelectorAll('.parallaxmountain');
 
 function moveLayerScroll(mScroll) {
@@ -12,12 +11,13 @@ function moveLayerScroll(mScroll) {
 window.addEventListener('scroll', e => {
     const mScroll = window.pageYOffset;
     moveLayerScroll(mScroll)
-    
 })
 
-function parallaxBudda(event) {
+function parallaxBudda(e) {
     const layerBudda = document.querySelector('.budda');
-    layerBudda.style.transform = `translate(${event.clientX/10}px, ${event.clientY/10}px)`
+    layerBudda.style.transform = `translate(${e.clientX/10}px, ${e.clientY/10}px)`;
 }
 
 document.addEventListener('mousemove', parallaxBudda);
+
+

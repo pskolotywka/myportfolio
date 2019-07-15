@@ -164,10 +164,13 @@
     display: flex;
 }
 .contacts {
+    @include desktabl() {
+        margin-right: 30px;
     @include tablets() {
         margin-right: 30px;
     @include phones() {
         display: none;
+    }
     }
     }
 }
@@ -469,7 +472,9 @@
 
 .menu.mobile {
     display: block;
-    
+}
+.menu.mobile .menu__item:hover:after {
+    width: 0%;
 }
 .mobile-menu {
     width: 40%;
