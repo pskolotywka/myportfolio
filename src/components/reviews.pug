@@ -9,14 +9,14 @@ script(type="text/x-template")#reviews
               
 script(type="text/x-template")#reviews-btns
     .reviews__controls
-        button.reviews__controls-button-prev
-        button.reviews__controls-button-next
+        button.reviews__controls-button-prev(@click="previous()")
+        button.reviews__controls-button-next(@click="next()")
 
 
 script(type="text/x-template")#reviews-list
     .reviews__comment
-        ul.reviews__comment-list
-            li.reviews__comment-item(v-for="review in reviews")
+        ul.reviews__comment-list(ref="flickity" :options="flickityOptions")
+            li.reviews__comment-item.carousel-cell(v-for="review in reviews")
                 item(
                     :review="review"
                 )
@@ -25,7 +25,7 @@ script(type="text/x-template")#reviews-item
     .item
         .reviews__comment-text {{review.comment}}
         .reviews__comment-sender
-            .reviews__comment-avatar(:style=`background-image:url(${review.image})`)
+            .reviews__comment-avatar(style=`backgroundImage:url(+review.image)`)
             .reviews__comment-sender-info
                 .reviews__comment-sender-name {{review.name}}
                 .reviews__comment-sender-position {{review.position}}
