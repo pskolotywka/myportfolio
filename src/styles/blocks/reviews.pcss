@@ -187,10 +187,26 @@
     }
 }
 .reviews__comment-list {
-    display: flex;
+    /* display: flex;
     width: 67%;
-    overflow: hidden;
+    overflow: hidden; */
+    margin-top: 50px;
+    width: 930px;
+    @include desktop() {
+        width: 920px;
+    @include tablets() {
+        width: 660px;
+    @include phones() {
+        width: 285px;
+    }
+    }
+    
+    }
 }
+.flickity-slider {
+    width: 66%;
+}
+
 .reviews__comment-item {
     width: 456px;
     min-height: 363px;

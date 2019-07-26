@@ -1,4 +1,4 @@
-import Flickity from 'vue-flickity';
+/* import Flickity from 'vue-flickity';
  
 new Vue({
   components: {
@@ -12,18 +12,9 @@ new Vue({
       prevNextButtons: false,
       pageDots: false,
       wrapAround: true
- 
       }
     }
   },
  
-  methods: {
-    next() {
-      this.$refs.flickity.next();
-    },
- 
-    previous() {
-      this.$refs.flickity.previous();
-    }
-  }
-});
+  
+}); */

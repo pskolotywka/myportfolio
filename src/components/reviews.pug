@@ -2,8 +2,11 @@ script(type="text/x-template")#reviews
     .reviews-vue
         .reviews__block
             h2.title-two Что обо мне говорят
-            btns
+            btns(
+                :flickityRefs="flickityRefs"
+            )
         list(
+            @loadRef="updatedRefs"
             :reviews="reviews"
         )
               
@@ -15,11 +18,12 @@ script(type="text/x-template")#reviews-btns
 
 script(type="text/x-template")#reviews-list
     .reviews__comment
-        ul.reviews__comment-list(ref="flickity" :options="flickityOptions")
-            li.reviews__comment-item.carousel-cell(v-for="review in reviews")
-                item(
-                    :review="review"
-                )
+        flickity.reviews__comment-list(ref="flickity" :options="flickityOptions")
+            item.carousel-cell(
+                v-for="review in reviews"
+                :review="review"
+                :key="review.key"
+            )
 
 script(type="text/x-template")#reviews-item
     .item

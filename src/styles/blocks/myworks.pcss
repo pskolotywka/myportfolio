@@ -126,6 +126,14 @@
 }
 .myworks__images-block {
     display: flex;
+    @include desktop(){
+    @include tablets() {
+        flex-direction: column;
+    @include phones() {
+        flex-direction: column;
+    }
+    }
+    }
 }
 .myworks__preview-img {
     width: 100%;

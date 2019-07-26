@@ -1,5 +1,6 @@
 <template lang="pug">
   .wrapper
+    router-view
     header.admin__header
       .container
         .info__block
@@ -18,133 +19,59 @@
               a.admin__menu-name(href="#") Отзывы
     section.admin__about
       .container
-        .admin__about-title-btn
-          h4.admin__about-title Блок «Обо мне»
-          button.admin__about-btn-add(type="button") Добавить группу
-        ul.admin__about-dev
-          li.admin__about-dev-item
-            .admin__about-dev-block
-              input.admin__about-dev-input(type='input' placeholder="Название новой группы")
-              .admin__about-dev-buttons
-                button.admin__about-dev-ok(type="button")
-                button.admin__about-dev-no(type="button")
-            .admin__about-dev-block-newskill
-              input.admin__about-dev-name-skill(type='input' placeholder="Новый скилл")
-              .admin__about-dev-block-value-style
-                input.admin__about-dev-value-skill(type='input' placeholder="100" )
-                .value-style %
-              button.admin__about-dev-addskill(type="button" )
-          li.admin__about-dev-item
-            .admin__about-dev-block
-              input.admin__about-dev-input(type='input' value="Workflow" placeholder="Название группы")
-              .admin__about-dev-buttons
-                button.admin__about-dev-ok(type="button")
-                button.admin__about-dev-no(type="button")
-            ul.admin__about-dev-skills-list
-              li.admin__about-dev-skills-item
-                .admin__about-dev-skills-item-name CSS
-                .admin__about-dev-skills-item-value 30
-                .admin__about-dev-skills-item-controls
-                  button.admin__about-dev-skills-item-edit
-                  button.admin__about-dev-skills-item-delete
-              li.admin__about-dev-skills-item
-                .admin__about-dev-skills-item-name CSS
-                .admin__about-dev-skills-item-value 30
-                button.admin__about-dev-skills-item-edit
-                button.admin__about-dev-skills-item-delete
-              li.admin__about-dev-skills-item
-                .admin__about-dev-skills-item-name CSS
-                .admin__about-dev-skills-item-value 30
-                button.admin__about-dev-skills-item-edit
-                button.admin__about-dev-skills-item-delete
-            .admin__about-dev-block-newskill
-              input.admin__about-dev-name-skill(type='input' placeholder="Новый скилл")
-              .admin__about-dev-block-value-style
-                input.admin__about-dev-value-skill(type='input' placeholder="100" )
-                .value-style %
-              button.admin__about-dev-addskill(type="button" )
-          li.admin__about-dev-item
-            .admin__about-dev-block
-              input.admin__about-dev-input(type='input' value="Workflow" placeholder="Название группы")
-              .admin__about-dev-buttons
-                button.admin__about-dev-ok(type="button")
-                button.admin__about-dev-no(type="button")
-            ul.admin__about-dev-skills-list
-              li.admin__about-dev-skills-item
-                .admin__about-dev-skills-item-name CSS
-                .admin__about-dev-skills-item-value 30
-                .admin__about-dev-skills-item-controls
-                  button.admin__about-dev-skills-item-edit
-                  button.admin__about-dev-skills-item-delete
-              li.admin__about-dev-skills-item
-                .admin__about-dev-skills-item-name CSS
-                .admin__about-dev-skills-item-value 30
-                button.admin__about-dev-skills-item-edit
-                button.admin__about-dev-skills-item-delete
-              li.admin__about-dev-skills-item
-                .admin__about-dev-skills-item-name CSS
-                .admin__about-dev-skills-item-value 30
-                button.admin__about-dev-skills-item-edit
-                button.admin__about-dev-skills-item-delete
-            .admin__about-dev-block-newskill
-              input.admin__about-dev-name-skill(type='input' placeholder="Новый скилл")
-              .admin__about-dev-block-value-style
-                input.admin__about-dev-value-skill(type='input' placeholder="100" )
-                .value-style %
-              button.admin__about-dev-addskill(type="button" )  
+        
     section.addwork
-      
-      .addwork__content
-        h5.addwork__title.admin__about-title Блок «Работы»
-        .addwork__block-edit
-          h4.addwork__block-edit-title Редактирование работы
-          .addwork__block-edit-container
-            .addwork__onload-block
-              .addwork__onload-info Перетащите или загрузите для загрузки изображения
-              button.addwork__onload-button(type="button") Загрузить
-            form(action="POST")#form
-              label.form__field
-                .form__fied-name Название
-                input.form__field-input(type="input" value="Дизайн сайта для авто салона Porsche")
-              label.form__field
-                .form__fied-name Ссылка
-                input.form__field-input(type="input" value="https://www.porsche-pulkovo.ru")
-              label.form__description
-                .form__fied-name Описание
-                textarea.form__description-input(type="text" value="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
-              label.form__field
-                .form__fied-name Добавления тега
-                input.form__field-input(type="input" )
-              ul.form__tags-list
-                li.form__tags-item HTML
-                  button.form__tags-item-close(type="button")
-                li.form__tags-item CSS
-                  button.form__tags-item-close(type="button")
-                li.form__tags-item Javascript
-                  button.form__tags-item-close(type="button")
-
-              .form__controls
-                button.form__cancel-btn(type="button") Отмена
-                button.form__download-btn(type="button") Сохранить
-        .addwork__preview
-          .addwork__preview-add
-            .addwork__preview-style +
-            .addwork__preview-text Добавить работу
-          ul.addwork__preview-list
-            li.addwork__preview-item
-              .addwork__preview-image-tags
-                img.addwork__preview-image(src="../images/content/1.jpg")
-                ul.addwork__preview-image-tags-list
-                  li.addwork__preview-image-tags-item html
-                  li.addwork__preview-image-tags-item css
-                  li.addwork__preview-image-tags-item javascript
-              .addwork__preview-edit-block
-                .addwork__preview-edit-block-name Сайт школы образования
-                .addwork__preview-edit-block-description Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.addwork__preview-edit-block-link(href="#") http://loftschool.ru
-                .addwork__preview-edit-block-controls
-                  button.addwork__preview-edit(type="button") Править
-                  button.addwork__preview-delete(type="button") Удалить
+      .container
+        .addwork__content
+          h5.addwork__title.admin__about-title Блок «Работы»
+          .addwork__block-edit
+            h4.addwork__block-edit-title Редактирование работы
+            .addwork__block-edit-container
+              .addwork__onload-block
+                .addwork__onload-info Перетащите или загрузите для загрузки изображения
+                button.addwork__onload-button(type="button") Загрузить
+              form(action="POST")#form
+                label.form__field
+                  .form__fied-name Название
+                  input.form__field-input(type="input" value="Дизайн сайта для авто салона Porsche")
+                label.form__field
+                  .form__fied-name Ссылка
+                  input.form__field-input(type="input" value="https://www.porsche-pulkovo.ru")
+                label.form__description
+                  .form__fied-name Описание
+                  textarea.form__description-input(type="text" value="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
+                label.form__field
+                  .form__fied-name Добавления тега
+                  input.form__field-input(type="input" )
+                ul.form__tags-list
+                  li.form__tags-item HTML
+                    button.form__tags-item-close(type="button")
+                  li.form__tags-item CSS
+                    button.form__tags-item-close(type="button")
+                  li.form__tags-item Javascript
+                    button.form__tags-item-close(type="button")
+                .form__controls
+                  button.form__cancel-btn(type="button") Отмена
+                  button.form__download-btn(type="button") Сохранить
+          .addwork__preview
+            .addwork__preview-add
+              .addwork__preview-style +
+              .addwork__preview-text Добавить работу
+            ul.addwork__preview-list
+              li.addwork__preview-item
+                .addwork__preview-image-tags
+                  img.addwork__preview-image(src="../images/content/1.jpg")
+                  ul.addwork__preview-image-tags-list
+                    li.addwork__preview-image-tags-item html
+                    li.addwork__preview-image-tags-item css
+                    li.addwork__preview-image-tags-item javascript
+                .addwork__preview-edit-block
+                  .addwork__preview-edit-block-name Сайт школы образования
+                  .addwork__preview-edit-block-description Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  a.addwork__preview-edit-block-link(href="#") http://loftschool.ru
+                  .addwork__preview-edit-block-controls
+                    button.addwork__preview-edit(type="button") Править
+                    button.addwork__preview-delete(type="button") Удалить
     section.addreviews
       .container
         h5.addreviews__title Блок «Отзывы»
@@ -184,6 +111,8 @@
               .addreviews__preview-controls.addwork__preview-edit-block-controls
                 button.addreviews__preview-btn-edit.addwork__preview-edit(type="button") Править
                 button.addreviews__preview-btn-delete.addwork__preview-delete(type="button") Удалить
+    
+
 
 
 </template>
@@ -192,10 +121,20 @@
 
 @import "../styles/main.pcss";
 
-
+  .wrapper {
+    
+  }
   .container {
     width: 1200px;
     margin: 0 auto;
+    @include tablets() {
+      width: 768px;
+      padding: 0 30px;
+    @include phones() {
+      width: 320px;
+      padding: 0px 0px;
+    }
+    }
   }
   .body {
     padding: 0;
@@ -206,12 +145,18 @@
     height: 80px;
     background-color: #3e3e59;
     background-image: linear-gradient(to right, #3e3e59 0%, #454573 100%);
+    @include phones() {
+      padding: 0px 30px;
+    }
   }
   .info__block {
     display: flex;
     height: 80px;
     align-items: center;
     padding-left: 60px;
+    @include tablets() {
+      padding-left: 0px;
+    }
   }
   .info__block-avatar {
     width: 44px;
@@ -234,6 +179,9 @@
     font-size: 14px;
     font-weight: 400;
     margin-left: 28px;
+    @include phones() {
+      display: none;
+    }
   }
   .exit {
     opacity: 0.7;
@@ -244,16 +192,28 @@
     line-height: 24px;
     text-decoration: underline;
     margin-left: 551px;
+    @include tablets() {
+      margin-left: 20%;
+    @include phones() {
+      margin-left: 0%;
+    }
+    }
   }
   .admin__menu {
     width: 100%;
     height: 77px;
     background-color: #ffffff;
+    @include phones() {
+      width: 82%;
+    }
   }
   .admin__menu-list {
     display: flex;
     height: 100%;
     margin-left: 59px;
+    @include tablets() {
+      margin-left: 0px;
+    }
   }
   .admin__menu-item {
     width: 116px;
@@ -278,273 +238,19 @@
 
 
 
-  .admin__about {
-    width: 100%;
-    padding: 0 60px;
-    padding-top: 129px;
-  }
-  .admin__about-title-btn {
-    display: flex;
-    align-items: center;
-    margin-bottom: 61px;
-  }
-  .admin__about-title {
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 21px;
-    font-weight: 700;
-  }
-  .admin__about-btn-add {
-    display: inline-block;
-    background-color: transparent;
-    font-family: "Open Sans";
-    border: none;
-    color: #383bcf;
-    font-size: 16px;
-    font-weight: 700;
-    margin-left: 82px;
-    position: relative;
-    
-  }
-  .admin__about-btn-add:before {
-    content: '+';
-    width: 21px;
-    height: 21px;
-    color: #ffffff;
-    font-family: "Open Sans - Semibold";
-    font-size: 15px;
-    font-weight: 400;
-    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-    position: absolute;
-    left: -27px;
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-  }
-  .admin__about-dev {
-    display: flex;
-    flex-flow: wrap;
-    
-  }
-  .admin__about-dev-item {
-    padding: 5px 30px;
-    width: 525px;
-    height: 387px;
-    box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
-    background-color: #ffffff;
-    margin-right: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 33px;
-    margin-bottom: 30px;
-  }
-  .admin__about-dev-item:last-child {
-    margin-right: 0px;
-  }
-  .admin__about-dev-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-  .admin__about-dev-block:after {
-    content: '';
-    position: absolute;
-    bottom: -13px;
-    left: -10px;
-    width: 485px;
-    height: 1px;
-    background-color: #1f232d;
-    opacity: 0.15;
-  }
-  .admin__about-dev-input {
-    width: 273px;
-    border: 0;
-    outline: none;
-    background-color: transparent;
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 34px;
-    border-bottom: 1px solid black;
-  }
-  .admin__about-dev-input[placeholder] {
-    opacity: 0.51;
-  }
-  .admin__about-dev-buttons {
-    display: flex;
-  }
-  .admin__about-dev-ok {
-    background: svg-load('tick.svg', fill=#00d70a, width=100%, height=100%);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    height: 16px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-  }
-  .admin__about-dev-no {
-    height: 16px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: svg-load('cross.svg', fill=#bf2929, width=100%, height=100%);
-    background-repeat: no-repeat;
-    background-size: 16px;
-  }
-  .admin__about-dev-block-newskill {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .admin__about-dev-name-skill {
-    border: 0;
-    outline: none;
-    background-color: transparent;
-    width: 218px;
-    border-bottom: 1px solid black;
-    margin-right: 10px;
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 32px;
-    padding-left: 15px;
-  }
-  .admin__about-dev-block-value-style {
-    position: relative;
-    widows: 88px;
-  }
-  .admin__about-dev-value-skill {
-    border: 0;
-    outline: none;
-    background-color: transparent;
-    width: 74px;
-    border-bottom: 1px solid black;
-    margin-right: 30px;
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 32px;
-    position: relative;
-    padding-left: 15px;
-  }
-  .value-style {
-    position: absolute;
-    right: 32px;
-    top: 9px;
-    opacity: 0.7;
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-  }
-  .admin__about-dev-value-skill:after {
-    content: "%";
-    position: absolute;
-    right: 0;
-    top: 0;
 
-  }
-
-  .admin__about-dev-addskill {
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .admin__about-dev-addskill:before {
-    content: '+';
-    position: absolute;
-    color: #ffffff;
-    font-family: "Open Sans";
-    font-size: 30px;
-    font-weight: 400;
-  }
-  .admin__about-dev-value-skill[placeholder]          {
-    opacity: 0.5;
-    }
-  .admin__about-dev-skills-block {
-
-  }
-  input.admin__about-dev-input[value] {
-    color: black;
-    font-family: "Open Sans - Semibold";
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 47px;
-  }
-  .admin__about-dev-skills-list {
-    height: 70%;
-    padding-top: 30px;
-  }
-  .admin__about-dev-skills-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-  }
-  .admin__about-dev-skills-item:last-child {
-    margin-bottom: 0px;
-  }
-  .admin__about-dev-skills-item-name {
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-    margin-right: 255px;
-  }
-  .admin__about-dev-skills-item-value {
-    color: #414c63;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 32px;
-    margin-right: 14px;
-  }
-  .admin__about-dev-skills-item-value:after {
-    content: '%';
-    margin-left: 14px;
-    margin-right: 61px;
-  }
-  .admin__about-dev-skills-item-controls {
-    display: flex;
-  }
-  .admin__about-dev-skills-item-edit {
-    width: 15px;
-    height: 15px;
-    background: svg-load('pencil.svg', fill=#414c63, width=100%, height=100%);
-    background-repeat: no-repeat;
-    background-size: 16px;
-    margin-right: 20px;
-  }
-  .admin__about-dev-skills-item-delete {
-    width: 18px;
-    height: 16px;
-    background: svg-load('trash.svg', fill=#414c63, width=100%, height=100%);
-    background-repeat: no-repeat;
-    background-size: 16px;
-  }
   .addwork {
     height: 100%;
     padding: 130px 60px 0px 60px;
+    @include tablets() {
+      padding: 125px 0px 0px 0px;
+    }
   }
   .addwork__title {
     margin-bottom: 60px;
+    @include phones() {
+      padding: 0px 30px;
+    }
   }
   .addwork__block-edit {
     height: 775px;
@@ -552,6 +258,9 @@
     background-color: #ffffff;
     padding: 21px 30px;
     margin-bottom: 30px;
+    @include tablets() {
+      height: 100%;
+    }
   }
   .addwork__block-edit-title {
     color: #414c63;
@@ -570,9 +279,15 @@
     height: 1px;
     background-color: #1f232d;
     opacity: 0.4;
+    @include tablets() {
+      width: 103%;
+    }
   }
   .addwork__block-edit-container {
     display: flex;
+    @include tablets() {
+      flex-direction: column;
+    }
   }
   .addwork__onload-block {
     width: 50%;
@@ -584,6 +299,9 @@
     justify-content: center;
     align-items: center;
     margin-right: 28px;
+    @include tablets() {
+      width: 100%;
+    }
   }
   .addwork__onload-info {
     width: 219px;
@@ -614,6 +332,10 @@
 
   #form {
     width: 50%;
+    @include tablets() {
+      width: 100%;
+      margin-top: 54px;
+    }
   }
   .form__fied-name {
     opacity: 0.5;
@@ -650,10 +372,17 @@
     line-height: 30px;
     padding: 16px;
     margin-bottom: 27px;
+    @include phones() {
+      width: 100%;
+      margin-top: 15px;
+    }
   }
   .form__tags-list {
     display: flex;
     margin-bottom: 40px;
+    @include phones() {
+      flex-flow: wrap;
+    }
   }
   .form__tags-item {
     border-radius: 15px;
@@ -665,6 +394,11 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-right: 12px;
+    @include phones() {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
   }
   .form__tags-item:last-child {
     margin-right: 0px;
@@ -712,6 +446,9 @@
   .addwork__preview {
     height: 100%;
     display: flex;
+    @include phones() {
+      flex-direction: column;
+    }
   }
   .addwork__preview-add {
     cursor: pointer;
@@ -725,6 +462,11 @@
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
     margin-bottom: 30px;
     margin-right: 30px;
+    @include phones() {
+      flex-direction: row;
+      padding: 30px;
+      height: 100%;
+    }
   }
   .addwork__preview-style {
     width: 150px;
@@ -738,6 +480,12 @@
     color: white;
     background-repeat: no-repeat;
     margin-bottom: 22px;
+    @include phones() {
+      width: 50px;
+      height: 50px;
+      font-size: 32px;
+      margin-bottom: 0px;
+    }
   }
   .addwork__preview-text {
     width: 93px;
@@ -747,6 +495,9 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 30px;
+    @include phones() {
+      width: 69%;
+    }
   }
   .addwork__preview-list {
     display: flex;
@@ -851,6 +602,9 @@
   .addreviews {
     padding: 130px 60px;
     margin-bottom: 30px;
+    @include tablets() {
+      padding: 130px 0px 0px 0px;
+    }
   }
   .addreviews__title {
     color: #414c63;
@@ -858,6 +612,9 @@
     font-size: 21px;
     font-weight: 700;
     margin-bottom: 61px;
+    @include phones() {
+      padding: 0px 30px;
+    }
   }
   #reviews__form {
     width: 1080px;
@@ -866,9 +623,16 @@
     background-color: #ffffff;
     padding: 19px 30px;
     margin-bottom: 30px;
+    @include tablets() {
+      width: 100%;
+      height: 100%;
+    }
   }
   .form__load-block {
     display: flex;
+    @include phones() {
+      flex-direction: column;
+    }
 
   }
   .form__load-photo {
@@ -878,6 +642,9 @@
     align-items: center;
     margin-right: 32px;
     padding-bottom: 99px;
+    @include phones() {
+      margin-right: 0px;
+    }
   }
   .form__load-photo-style {
     width: 200px;
@@ -902,6 +669,9 @@
   }
   .form__load-row {
     display: flex;
+    @include tablets() {
+      flex-direction: column;
+    }
   }
   .form__load-field {
     margin-right: 30px;
@@ -928,6 +698,9 @@
     line-height: 34px;
     border-bottom: 1px solid black;
     margin-bottom: 33px;
+    @include phones() {
+      width: 100%;
+    }
   }
   .form__load-comment-name {
     margin-bottom: 15px;
@@ -943,6 +716,12 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 30px;
+    @include tablets() {
+      width: 100%;
+    @include phones() {
+      width: 100%;
+    }
+    }
   }
   .form__load-controls {
     display: flex;
@@ -951,13 +730,9 @@
   }
   .addreviews__preview {
     display: flex;
-  }
-  .addreviews__preview-add {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 30px;
+    @include phones() {
+      flex-direction: column;
+    }
   }
   .addreviews__preview-add {
     cursor: pointer;
@@ -965,6 +740,18 @@
     height: 380px;
     background-color: #ffffff;
     background-image: linear-gradient(to right, #006aed 0%, #3f35cb 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    @include phones() {
+      height: 100%;
+      flex-direction: row;
+      padding: 30px;
+      margin-bottom: 30px;
+      
+    }
   }
   .addreviews__preview-text {
     width: 93px;
@@ -974,6 +761,9 @@
     font-weight: 700;
     line-height: 30px;
     text-align: center;
+    @include phones() {
+      width: 69%;
+    }
   }
   .addreviews__preview-list {
     display: flex;
@@ -985,6 +775,9 @@
     box-shadow: 4px 3px 20px rgba(0, 0, 0, 0.07);
     background-color: #ffffff;
     padding: 30px;
+    @include phones() {
+      margin-bottom: 30px;
+    }
   }
   .addreviews__preview-about {
     display: flex;
@@ -1028,5 +821,6 @@
   .addreviews__preview-btn-delete {
     content: svg-load('cross.svg', fill=red, width=15px, height=15px);
   }
+
   </style>
 
