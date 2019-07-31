@@ -1,43 +1,43 @@
 <template lang="pug">
-section.addreviews
-  .container
-    h5.addreviews__title Блок «Отзывы»
-    form(action="POST")#reviews__form
-      h4.addreviews__block-newreview-title.addwork__block-edit-title Новый отзыв
-      .form__load-block
-        .form__load-photo
-          .form__load-photo-style
-            img.form__load-image(src="../../images/content/man-user.png")
-          button.form__load-photo-btn(type="button") Добавить фото
-        .form__load-fields-block
-          .form__load-row
-            label.form__load-field
-              .form__load-field-name Имя автора
-              input.form__load-field-input(type="input" placeholder="Поддубный Евгений")
-            label.form__load-field
-              .form__load-field-name Титул автора
-              input.form__load-field-input(type="input" placeholder="Ученик Loftschool")
-          .form__load-comment
-            .form__load-comment-name.form__load-field-name Отзыв
-            textarea.form__load-comment-field(type="text" value="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!")
-          .form__load-controls
-            button.form__cancel-butn.form__cancel-btn(type="button") Отмена
-            button.form__cancel-download.form__download-btn(type="button") Сохранить
-    .addreviews__preview
-      .addreviews__preview-add
-        .addreviews__preview-style.addwork__preview-style +
-        .addreviews__preview-text Добавить работу
-      ul.addreviews__preview-list
-        li.addreviews__preview-item
-          .addreviews__preview-about
-            .addreviews__preview-photo
-            .addreviews__preview-description
-              .addreviews__preview-name Владимир Сабанцев
-              .addreviews__preview-position Преподаватель
-          .addreviews__preview-description-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-          .addreviews__preview-controls.addwork__preview-edit-block-controls
-            button.addreviews__preview-btn-edit.addwork__preview-edit(type="button") Править
-            button.addreviews__preview-btn-delete.addwork__preview-delete(type="button") Удалить
+  section.addreviews
+    .container
+      h5.addreviews__title Блок «Отзывы»
+      form(action="POST")#reviews__form
+        h4.addreviews__block-newreview-title.addwork__block-edit-title Новый отзыв
+        .form__load-block
+          .form__load-photo
+            .form__load-photo-style
+              img.form__load-image(src="../../images/content/man-user.png")
+            button.form__load-photo-btn(type="button") Добавить фото
+          .form__load-fields-block
+            .form__load-row
+              label.form__load-field
+                .form__load-field-name Имя автора
+                input.form__load-field-input(type="input" placeholder="Поддубный Евгений")
+              label.form__load-field
+                .form__load-field-name Титул автора
+                input.form__load-field-input(type="input" placeholder="Ученик Loftschool")
+            .form__load-comment
+              .form__load-comment-name.form__load-field-name Отзыв
+              textarea.form__load-comment-field(type="text" value="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!")
+            .form__load-controls
+              button.form__cancel-butn.form__cancel-btn(type="button") Отмена
+              button.form__cancel-download.form__download-btn(type="button") Сохранить
+      .addreviews__preview
+        .addreviews__preview-add
+          .addreviews__preview-style.addwork__preview-style +
+          .addreviews__preview-text Добавить работу
+        ul.addreviews__preview-list
+          li.addreviews__preview-item
+            .addreviews__preview-about
+              .addreviews__preview-photo
+              .addreviews__preview-description
+                .addreviews__preview-name Владимир Сабанцев
+                .addreviews__preview-position Преподаватель
+            .addreviews__preview-description-text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+            .addreviews__preview-controls.addwork__preview-edit-block-controls
+              button.addreviews__preview-btn-edit.addwork__preview-edit(type="button") Править
+              button.addreviews__preview-btn-delete.addwork__preview-delete(type="button") Удалить
 </template>
 
 <style lang="postcss">

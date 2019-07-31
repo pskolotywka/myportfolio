@@ -1,56 +1,56 @@
 <template lang="pug">
-section.addwork
-  .container
-    .addwork__content
-      h5.addwork__title.admin__about-title Блок «Работы»
-      .addwork__block-edit
-        h4.addwork__block-edit-title Редактирование работы
-        .addwork__block-edit-container
-          .addwork__onload-block
-            .addwork__onload-info Перетащите или загрузите для загрузки изображения
-            button.addwork__onload-button(type="button") Загрузить
-          form(action="POST")#form
-            label.form__field
-              .form__fied-name Название
-              input.form__field-input(type="input" value="Дизайн сайта для авто салона Porsche")
-            label.form__field
-              .form__fied-name Ссылка
-              input.form__field-input(type="input" value="https://www.porsche-pulkovo.ru")
-            label.form__description
-              .form__fied-name Описание
-              textarea.form__description-input(type="text" value="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
-            label.form__field
-              .form__fied-name Добавления тега
-              input.form__field-input(type="input" )
-            ul.form__tags-list
-              li.form__tags-item HTML
-                button.form__tags-item-close(type="button")
-              li.form__tags-item CSS
-                button.form__tags-item-close(type="button")
-              li.form__tags-item Javascript
-                button.form__tags-item-close(type="button")
-            .form__controls
-              button.form__cancel-btn(type="button") Отмена
-              button.form__download-btn(type="button") Сохранить
-      .addwork__preview
-        .addwork__preview-add
-          .addwork__preview-style +
-          .addwork__preview-text Добавить работу
-        ul.addwork__preview-list
-          li.addwork__preview-item
-            .addwork__preview-image-tags
-              img.addwork__preview-image(src="../../images/content/1.jpg")
-              ul.addwork__preview-image-tags-list
-                li.addwork__preview-image-tags-item html
-                li.addwork__preview-image-tags-item css
-                li.addwork__preview-image-tags-item javascript
-            .addwork__preview-edit-block
-              .addwork__preview-edit-block-name Сайт школы образования
-              .addwork__preview-edit-block-description Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-              a.addwork__preview-edit-block-link(href="#") http://loftschool.ru
-              .addwork__preview-edit-block-controls
-                button.addwork__preview-edit(type="button") Править
-                button.addwork__preview-delete(type="button") Удалить
+  section.addwork
+    .container
+      .addwork__content
+        h5.addwork__title.admin__about-title Блок «Работы»
+        .addwork__block-edit
+          h4.addwork__block-edit-title Редактирование работы
+          .addwork__block-edit-container
+            .addwork__onload-block
+              .addwork__onload-info Перетащите или загрузите для загрузки изображения
+              button.addwork__onload-button(type="button") Загрузить
+            form(action="POST")#form
+              label.form__field
+                .form__fied-name Название
+                input.form__field-input(type="input" value="Дизайн сайта для авто салона Porsche")
+              label.form__field
+                .form__fied-name Ссылка
+                input.form__field-input(type="input" value="https://www.porsche-pulkovo.ru")
+              label.form__description
+                .form__fied-name Описание
+                textarea.form__description-input(type="text" value="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей")
+              label.form__field
+                .form__fied-name Добавления тега
+                input.form__field-input(type="input" )
+              ul.form__tags-list
+                li.form__tags-item HTML
+                  button.form__tags-item-close(type="button")
+                li.form__tags-item CSS
+                  button.form__tags-item-close(type="button")
+                li.form__tags-item Javascript
+                  button.form__tags-item-close(type="button")
+              .form__controls
+                button.form__cancel-btn(type="button") Отмена
+                button.form__download-btn(type="button") Сохранить
+        .addwork__preview
+          .addwork__preview-add
+            .addwork__preview-style +
+            .addwork__preview-text Добавить работу
+          ul.addwork__preview-list
+            li.addwork__preview-item
+              .addwork__preview-image-tags
+                img.addwork__preview-image(src="../../images/content/1.jpg")
+                ul.addwork__preview-image-tags-list
+                  li.addwork__preview-image-tags-item html
+                  li.addwork__preview-image-tags-item css
+                  li.addwork__preview-image-tags-item javascript
+              .addwork__preview-edit-block
+                .addwork__preview-edit-block-name Сайт школы образования
+                .addwork__preview-edit-block-description Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.addwork__preview-edit-block-link(href="#") http://loftschool.ru
+                .addwork__preview-edit-block-controls
+                  button.addwork__preview-edit(type="button") Править
+                  button.addwork__preview-delete(type="button") Удалить
 </template>
 
 <style lang="postcss">

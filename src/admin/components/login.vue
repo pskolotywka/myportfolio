@@ -1,18 +1,18 @@
 <template lang="pug">
-    .login
-        .login__content
-            h4.login__title Авторизация
-            button.login__btn-close
-            form(action="post")#login__form
-                label.login__form-field
-                    .login__form-name-log Логин
-                    input.login__form-input-log(type='text' value='terminator_2000')
-                    span.login__form-input-style-log
-                label.login__form-field
-                    .login__form-name-pas Пароль
-                    input.login__form-input-pas(type='text' value='***********')
-                    span.login__form-input-style-pas
-                input(type="submit").login__form-btn-send
+  .login
+      .login__content
+          h4.login__title Авторизация
+          button.login__btn-close
+          form(action="post")#login__form
+              label.login__form-field
+                  .login__form-name-log Логин
+                  input.login__form-input-log(type='text' value='terminator_2000')
+                  span.login__form-input-style-log
+              label.login__form-field
+                  .login__form-name-pas Пароль
+                  input.login__form-input-pas(type='text' value='***********')
+                  span.login__form-input-style-pas
+              input(type="submit").login__form-btn-send
 </template>
 
 <style lang="postcss">
@@ -62,6 +62,10 @@
     top: 30px;
     right: 30px;
     background: svg-load('remove.svg', fill=$text-color, width=100%, height=100%);
+}
+.login__form {
+		display: flex;
+    flex-direction: column;
 }
 .login__form-field {
     position: relative;

@@ -23,26 +23,12 @@
     },
     data() {
       return {
-        
+        skillData: []
       }
     }
   }
 
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</script>
 
 
 <style lang="postcss" scoped>
